@@ -7,7 +7,7 @@ router.post('/', function(req, res, next) {
 
         var handled = false;
 
-        if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        if(Object.keys(req.body).length === 1){
 
             handled = true;
 
