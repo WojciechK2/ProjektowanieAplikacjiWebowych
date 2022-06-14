@@ -83,5 +83,5 @@ Moduly Middleware:
   - moduł z funkcjonalnością cron, do automatycznego usuwania przestarzałych sesji
 
 ## Uwagi
-folder /node-modules/ został pominiety
-folder /keys został pominięty, trzeba bedzie wygenerować osobną parę kluczy
+- folder /node-modules/ został pominiety
+- folder /keys został pominięty, trzeba bedzie wygenerować osobną parę kluczy
