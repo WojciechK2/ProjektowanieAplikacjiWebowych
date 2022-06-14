@@ -6,7 +6,8 @@ block content
     p Hi user: #{user_id}
     p Here your search results will be displayed
 
-    include includes/gobackbutton.pug
+    //include includes/gobackbutton.pug
+    input(type="button" value="Go Back" onclick="window.location.href='/'")
 
     div(class="show_notes")
         ul(class="note_list")
