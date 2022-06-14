@@ -1,0 +1,12 @@
+nav(class='site_navigation')
+        h1 Awesome Note Taking Product
+        ul(class='site_navigation_list')
+            li(class='site_navigation_list_item')
+                button(onclick="window.location.href='/';") index
+            li(class='site_navigation_list_item')
+                button(onclick="window.location.href='/login';") login
+            li(class='site_navigation_list_item')
+                button(onclick="window.location.href='/signup';") signup
+            li(class='site_navigation_list_item')
+                form(method="POST" action="/logout")
+                    input(value="logout" type="submit")

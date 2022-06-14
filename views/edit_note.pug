@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    div(class="description")
+        p Here you will be able to edit singular note
+
+    include includes/gobackbutton.pug
+
+    div(class="view_note")
+        div(class="notes_display")
+            p Here your notes will be displayed
+            form(class="notes_display" action="/edit_note?id="+`${note_id}` method="POST")
+                p Title
+                textarea(class="title_field" type="text" name="title" required) #{note_title}
+                p Content
+                textarea(class="content_field" type="text" name="contents" placeholder="") #{note_content}
+                p Tags
+                textarea(class="tags_field" type="text" name="tags" required) #{note_tags}
+                input(type="submit" value="Save changes")
+
+

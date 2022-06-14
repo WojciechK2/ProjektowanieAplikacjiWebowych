@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    h1= title
+
+    p Hi user: #{user_id}
+    p Here your search results will be displayed
+
+    include includes/gobackbutton.pug
+
+    div(class="show_notes")
+        ul(class="note_list")
+            each item in data
+                li(class="note_list_item_index")
+                    p
+                    strong Title:
+                    p= item[0]
+                    strong  Content:
+                    p= item[1]
+                    strong Tags:
+                    p= item[2]
+                    strong NoteID:
+                    p= item[3]
+                    strong Last Modified:
+                    p= item[4]
+                    button(onclick="window.location.href='/view_note?id=" + item[3] +"'") VIEW
+
+    div(class="search_notes")
+        p Search again
+        form(class="notes_display" action="/search_notes" method="POST")
+            input(type="text" name="search_val")
+            input(type="hidden" name="search_type" value="tag")
+            input(type="submit" value="SEARCH FOR NOTES BY TAG VALUE")
+
+    div(class="search_notes")
+        p Search again
+        form(class="notes_display" action="/search_notes" method="POST")
+            input(type="text" name="search_val")
+            input(type="hidden" name="search_type" value="title")
+            input(type="submit" value="SEARCH FOR NOTES BY TITLE")
+
+    div(class="search_notes")
+        p Search again
+        form(class="notes_display" action="/search_notes" method="POST")
+            input(type="text" name="search_val")
+            input(type="hidden" name="search_type" value="content")
+            input(type="submit" value="SEARCH FOR NOTES BY CONTENT")

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1= title
+
+    include includes/gobackbutton.pug
+
+    div(class="description")
+        p Here you will be able to edit your note
+
+    div(class="edit_segment")
+        form(class="notes_display" action="/new_note" method="POST")
+            p Tags:
+            input(class="tags_field" type="text" name="tags" placeholder="" required)
+            p Title:
+            input(class="tags_field" type="text" name="title" placeholder="" required)
+            p Contents:
+            textarea(class="content_field" type="text" name="contents" placeholder="")
+            br
+            br
+            input(type="submit", value="Submit")
+
+            br

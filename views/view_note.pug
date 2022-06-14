@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div(class="description")
+        p Here you will be able to view singular note
+
+    include includes/gobackbutton.pug
+
+    div(class="view_note")
+        div(class="notes_display")
+            p Here your notes will be displayed
+            p
+                strong Title:
+                | #{note_title}
+            p
+                strong Content:
+            textarea(class="view_note" disabled) #{note_content}
+            p
+                strong Tags:
+                | #{note_tags}
+            button(onclick="window.location.href='/edit_note?id=" +`${note_id}`+"'") EDIT
